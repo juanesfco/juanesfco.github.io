@@ -184,6 +184,14 @@ nav a.active {
   margin: 0 0 8px;
 }
 
+.cv-preview {
+  width: 100%;
+  min-height: 680px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+
 figure {
   margin: 0;
 }
