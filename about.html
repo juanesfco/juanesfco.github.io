@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juan E. Florez-Coronel | About Me</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="site">
+    <header>
+      <h1 class="brand">About Me</h1>
+      <p class="subtitle">Background, family, and professional profile.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="myWork.html">My Work</a>
+        <a href="teaching.html">Teaching</a>
+        <a class="active" href="about.html">About Me</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Longer Bio</h2>
+      <p>
+        I am a researcher and engineer working at the intersection of mechanical systems,
+        applied mathematics, and data science. My current work explores how optimization and
+        machine learning can improve engineering design and decision-making, especially in
+        settings where experiments are expensive and uncertainty is unavoidable.
+      </p>
+      <p>
+        Beyond research, I care deeply about teaching and mentoring. I enjoy helping students
+        move from theory to implementation by building clear, reproducible workflows and
+        computational intuition.
+      </p>
+      <p>
+        Outside academics, I am a husband and father, and I value the perspective and balance
+        that family brings to my work.
+      </p>
+    </section>
+
+    <section class="card figure">
+      <h2>Family</h2>
+      <figure>
+        <img src="Images/family.png" alt="Juan with family" />
+        <figcaption>Family is my greatest source of motivation.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card">
+      <h2>Curriculum Vitae</h2>
+      <p><a href="Files/juanesCV.pdf" target="_blank" rel="noopener">Open CV (PDF)</a></p>
+      <p class="meta">Direct file: <a href="Files/juanesCV.pdf">Files/juanesCV.pdf</a></p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Juan E. Florez-Coronel
+    </footer>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

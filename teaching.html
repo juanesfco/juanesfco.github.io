@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juan E. Florez-Coronel | Teaching</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="site">
+    <header>
+      <h1 class="brand">Teaching</h1>
+      <p class="subtitle">Courses, mentoring, and course materials.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="myWork.html">My Work</a>
+        <a class="active" href="teaching.html">Teaching</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Courses</h2>
+
+      <article class="course" id="msen655">
+        <h3>MSEN655</h3>
+        <p>
+          Graduate-level course support in computational and data-driven engineering methods,
+          including optimization, modeling workflows, and reproducible analysis.
+        </p>
+        <p class="meta">
+          Materials to include: lecture notes, coding demos, assignments, and project guidelines.
+        </p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Teaching Philosophy</h2>
+      <p>
+        I emphasize conceptual clarity, practical implementation, and iterative feedback.
+        Students learn best when mathematical ideas are connected to real engineering decisions.
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Juan E. Florez-Coronel
+    </footer>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

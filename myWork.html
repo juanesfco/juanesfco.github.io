@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juan E. Florez-Coronel | My Work</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="site">
+    <header>
+      <h1 class="brand">My Work</h1>
+      <p class="subtitle">Research and engineering work at the intersection of mechanics, computation, and AI.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="myWork.html">My Work</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <article class="project">
+        <h3>Bayesian Optimization for Experimental Design</h3>
+        <p>
+          Developing optimization strategies that choose the next best experiment to run,
+          reducing trial-and-error and accelerating discovery in engineering systems.
+        </p>
+        <p class="meta">Focus: surrogate modeling, uncertainty quantification, adaptive sampling.</p>
+      </article>
+
+      <article class="project">
+        <h3>Physics-Informed Machine Learning for Mechanical Systems</h3>
+        <p>
+          Integrating first-principles constraints with data-driven models so predictions stay
+          reliable even when data are noisy or sparse.
+        </p>
+        <p class="meta">Focus: constrained learning, hybrid models, model validation.</p>
+      </article>
+
+      <article class="project">
+        <h3>Optimization and Analytics for Complex Decisions</h3>
+        <p>
+          Building analytics pipelines that convert raw data into actionable decisions for
+          design, operations, and planning.
+        </p>
+        <p class="meta">Focus: optimization under uncertainty, decision support, scalable computation.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Publications / Talks</h2>
+      <article class="project">
+        <h3>Paper Title or Talk Title</h3>
+        <p>
+          Add your publication or invited talk details here, including collaborators,
+          conference/journal, and year.
+        </p>
+        <p class="meta">Venue · Year · <a href="#">Link</a></p>
+      </article>
+      <article class="project">
+        <h3>Paper Title or Talk Title</h3>
+        <p>
+          Add a short abstract or contribution statement to highlight the relevance of this work.
+        </p>
+        <p class="meta">Venue · Year · <a href="#">Link</a></p>
+      </article>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Juan E. Florez-Coronel
+    </footer>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

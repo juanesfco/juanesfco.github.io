@@ -3,51 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Juan E. Florez-Coronel</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
-    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 20px; }
-    h1 { margin: 0 0 8px; }
-    .subtitle { color: #555; margin: 0 0 24px; }
-    .links a { margin-right: 14px; }
-    .card { border: 1px solid #e6e6e6; border-radius: 12px; padding: 18px; margin: 18px 0; }
-  </style>
+  <title>Juan E. Florez-Coronel | Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Juan E. Florez-Coronel</h1>
-    <p class="subtitle">PhD student · Mechanical Engineering · Texas A&M</p>
+  <main class="site">
+    <section class="banner card">
+      <img src="Images/banner.png" alt="Website banner image" />
+    </section>
 
-    <div class="links">
-      <a href="https://github.com/juanesfco">GitHub</a>
-      <a href="mailto:juan.florez@tamu.edu">Email</a>
-      <a href="https://www.linkedin.com/in/juanesfco/">LinkedIn</a>
-    </div>
+    <header>
+      <h1 class="brand">Juan E. Florez-Coronel</h1>
+      <p class="subtitle">PhD Student, Mechanical Engineering · Texas A&M University</p>
+      <nav>
+        <a class="active" href="index.html">Home</a>
+        <a href="myWork.html">My Work</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </header>
 
-    <div class="card">
-      <h2>About</h2>
-      <p>
-        Husband and dad. Love mathematics and sports. Study engineering, data science and computers.
-      </p>
-    </div>
+    <section class="hero card">
+      <img src="Images/personal.png" alt="Portrait of Juan Florez-Coronel" />
+      <div>
+        <h2>Short Bio</h2>
+        <p>
+          I am a mechanical engineering PhD student focused on combining optimization,
+          machine learning, and physical modeling to solve high-impact engineering problems.
+          My work centers on turning complex data into practical tools for better design,
+          decision-making, and resilient systems.
+        </p>
+        <div class="inline-links">
+          <a href="https://github.com/juanesfco">GitHub</a>
+          <a href="mailto:juan.florez@tamu.edu">Email</a>
+          <a href="https://www.linkedin.com/in/juanesfco/">LinkedIn</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="#">Project 1</a> — one-line description</li>
-        <li><a href="#">Project 2</a> — one-line description</li>
-      </ul>
-    </div>
+    <section class="card">
+      <h2>Exciting Projects</h2>
+      <div class="grid">
+        <article class="project">
+          <h3>Bayesian Optimization for Engineering Design</h3>
+          <p class="meta">Fast experimentation with Gaussian-process surrogates to cut costly design iterations.</p>
+        </article>
+        <article class="project">
+          <h3>Data-Driven System Identification</h3>
+          <p class="meta">Learning predictive models from experimental and simulation data for dynamic systems.</p>
+        </article>
+        <article class="project">
+          <h3>AI for Decision Support</h3>
+          <p class="meta">Building robust workflows that help engineers make better choices under uncertainty.</p>
+        </article>
+      </div>
+      <p><a href="myWork.html">See full project details →</a></p>
+    </section>
 
-    <div class="card">
-      <h2>Publications / Talks</h2>
-      <ul>
-        <li>Paper/Talk — venue, year</li>
-      </ul>
-    </div>
-
-    <p style="color:#777;margin-top:28px;">© <span id="y"></span> Juanes</p>
-  </div>
+    <footer>
+      © <span id="y"></span> Juan E. Florez-Coronel
+    </footer>
+  </main>
 
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
