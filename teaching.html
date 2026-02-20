@@ -23,25 +23,30 @@
 
     <section class="card">
       <h2>Courses</h2>
+      <div class="filter-row">
+        <label for="institutionFilter">Filter by institution:</label>
+        <select id="institutionFilter" aria-label="Filter courses by institution">
+          <option value="all">All Institutions</option>
+          <option value="tamu" selected>Texas A&amp;M University</option>
+        </select>
+      </div>
 
-      <article class="course" id="msen655">
-        <h3>MSEN655</h3>
-        <p>
-          Graduate-level course support in computational and data-driven engineering methods,
-          including optimization, modeling workflows, and reproducible analysis.
-        </p>
-        <p class="meta">
-          Materials to include: lecture notes, coding demos, assignments, and project guidelines.
-        </p>
-      </article>
-    </section>
+      <div class="course-list">
+        <article class="course" data-institution="tamu" id="msen655">
+          <p class="chip">Texas A&amp;M University</p>
+          <h3>MSEN655/489: Materials Design Studio</h3>
+          <p>
+            Project-driven studio based on the integration of informatics and engineering
+            systems design to address problems in materials discovery and development;
+            projects derived from real industry-driven needs.
+          </p>
+          <p class="meta">
+            <a href="Pages/Teaching/msen655.html">Open course page and materials</a>
+          </p>
+        </article>
+      </div>
 
-    <section class="card">
-      <h2>Teaching Philosophy</h2>
-      <p>
-        I emphasize conceptual clarity, practical implementation, and iterative feedback.
-        Students learn best when mathematical ideas are connected to real engineering decisions.
-      </p>
+      <p id="noCourses" class="meta hidden">No courses found for this institution yet.</p>
     </section>
 
     <footer>
@@ -49,6 +54,28 @@
     </footer>
   </main>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const filterSelect = document.getElementById("institutionFilter");
+    const courses = document.querySelectorAll(".course[data-institution]");
+    const noCourses = document.getElementById("noCourses");
+
+    function applyInstitutionFilter() {
+      const selected = filterSelect.value;
+      let shown = 0;
+
+      courses.forEach((course) => {
+        const matches = selected === "all" || course.dataset.institution === selected;
+        course.classList.toggle("hidden", !matches);
+        if (matches) shown += 1;
+      });
+
+      noCourses.classList.toggle("hidden", shown !== 0);
+    }
+
+    filterSelect.addEventListener("change", applyInstitutionFilter);
+    applyInstitutionFilter();
+  </script>
 </body>
 </html>
