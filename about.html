@@ -50,11 +50,9 @@
 
     <section class="card">
       <h2>Curriculum Vitae</h2>
-      <iframe
-        class="cv-preview"
-        src="Files/juanesCV.pdf"
-        title="Juan E. Florez-Coronel CV preview">
-      </iframe>
+      <div id="cv-preview" class="cv-preview" role="img" aria-label="Juan E. Florez-Coronel CV preview">
+        <p class="meta">Loading preview…</p>
+      </div>
       <p><a href="Files/juanesCV.pdf" target="_blank" rel="noopener">Open CV in new tab (PDF)</a></p>
       <p class="meta">Direct file: <a href="Files/juanesCV.pdf">Files/juanesCV.pdf</a></p>
     </section>
@@ -65,5 +63,36 @@
   </main>
 
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    (async function renderCV() {
+      const container = document.getElementById("cv-preview");
+      try {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+        const pdf = await pdfjsLib.getDocument("Files/juanesCV.pdf").promise;
+        container.innerHTML = "";
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const scale = (container.clientWidth || 800) / page.getViewport({ scale: 1 }).width;
+          const viewport = page.getViewport({ scale });
+
+          const canvas = document.createElement("canvas");
+          canvas.className = "cv-page";
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          container.appendChild(canvas);
+
+          await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+        }
+      } catch (err) {
+        container.innerHTML = "<p class=\"meta\">Preview unavailable — please use the links below to view the CV.</p>";
+        console.error("CV preview failed to load:", err);
+      }
+    })();
+  </script>
 </body>
 </html>

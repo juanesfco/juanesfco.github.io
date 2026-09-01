@@ -234,10 +234,24 @@ nav a.active {
 
 .cv-preview {
   width: 100%;
-  min-height: 680px;
+  max-height: 800px;
+  overflow-y: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.cv-page {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 8px;
+}
+
+.cv-page:last-child {
+  margin-bottom: 0;
 }
 
 figure {
